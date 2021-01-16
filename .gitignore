@@ -13,3 +13,4 @@ db.sqlite3-journal
 media
 package-lock.json
 frontend/node_modules
+backend/Venv/
