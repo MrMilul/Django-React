@@ -8,7 +8,11 @@ export default class Dashboard extends Component {
         return (
             <div>
                 <Leads />
-                <Form/>
+                <hr className="m-5"/>
+                <div className="row justify-content-center">
+                     <Form/>
+                </div>
+                
             </div>
         )
     }
