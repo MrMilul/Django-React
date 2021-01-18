@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-import {DELETE_LEAD_DATA, FETCH_LEADS_DATA, POST_LEAD_DATA} from './types'
+import {DELETE_LEAD_DATA, FETCH_LEADS_DATA, POST_LEAD_DATA, GET_ERRORS_DATA} from './types'
 
 
 export const getLeads = () => dispatch =>{
@@ -30,5 +30,12 @@ export const postLead = (data)=> dispatch =>{
     axios.post('http://127.0.0.1:8000/api/lead/', data, config)
     .then(res =>{
         dispatch(POST_LEAD_DATA(data))
+    })
+    .catch(err => {
+        const errors = {
+            msg: err.response.data,
+            status: err.response.status
+        }
+        dispatch(GET_ERRORS_DATA(errors))
     })
 }

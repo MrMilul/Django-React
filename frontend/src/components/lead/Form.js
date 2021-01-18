@@ -26,19 +26,25 @@ export class Form extends Component {
         const {name, message, email} = this.state
         let lead = { name, message, email}
         this.props.postLead(lead)
+       
     }
     render() {
+       
         return (
             <form className="col-lg-5 border" onSubmit={this.submit}>
              <div className="form-group mt-3">
               <label htmlFor="exampleInputPassword1">Name</label>
               <input  className="form-control" 
-              id="exampleInputPassword1" name="name" onChange={this.formHandler}/>
+              id="exampleInputPassword1" name="name" 
+              
+              onChange={this.formHandler}/>
             </div>    
             <div className="form-group ">
               <label htmlFor="exampleInputEmail1">Email address</label>
               <input type="email" className="form-control" 
-              id="exampleInputEmail1" name="email" onChange={this.formHandler}
+              id="exampleInputEmail1" name="email" 
+              
+              onChange={this.formHandler}
               aria-describedby="emailHelp"/>
               <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
@@ -57,7 +63,6 @@ export class Form extends Component {
         )
     }
 }
-
 
 
 export default connect(null, {postLead})(Form)

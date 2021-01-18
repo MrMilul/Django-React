@@ -1,7 +1,7 @@
 import { GET_LEADS, DELETE_LEAD, POST_LEAD } from '../actions/types' 
 
 
-const initialState = {
+export const initialState = {
     leads:[]
 }
 
