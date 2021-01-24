@@ -28,8 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'leads',
+    'accounts',
     'rest_framework',
-    'corsheaders'
+    'corsheaders', 
+    'knox', 
+    
 ]
 
 MIDDLEWARE = [
@@ -113,4 +116,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = True    
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES' : 
+    ('knox.auth.TokenAuthentication')
+}
